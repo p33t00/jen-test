@@ -1,4 +1,4 @@
-pipeline {
+ipeline {
     agent {
         kubernetes {
             cloud 'k8s'  // Cloud agent name
@@ -7,9 +7,15 @@ pipeline {
         }
     }
     stages {
+        stage('Build') {
+            steps {
+                git([url: 'git://github.com/p33t00/jen-test.git', branch: 'main'])
+            }
+        }
         stage('Main') {
             steps {
                 sh 'hostname'
+		sh 'ls -lah'
             }
         }
     }
