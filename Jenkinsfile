@@ -6,6 +6,9 @@ pipeline {
             retries 2
         }
     }
+    tools {
+        gradle 'gradle-8.1'
+    }
     stages {
         //stage('Build') {
          //   steps {
